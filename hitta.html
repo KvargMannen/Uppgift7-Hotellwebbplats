@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Hitta enkelt till oss med vår detaljerade vägbeskrivning och karta. Upptäck det bästa sättet att ta dig till vårt hotell, oavsett om du reser med bil, tåg eller flyg. Besök vår hitta-sida för mer information.">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="img">
+                <img class="logo" src="bilder/logo.webp" alt="The logo of Mariott Hotel and Resorts">
+                <img class="banner" src="bilder/banner.webp" alt="Showcase of the hotel pool">
+            </div>
+            <nav>
+                <a href="index.html">Välkommen</a>
+                <a href="boka.html">Boka</a>
+                <a href="hitta.html">Hitta</a>
+                <a href="kontakta.html">Kontakta</a>
+            </nav>
+        </header>
+        <main>
+            <article class="article5">
+                <h1>Hitta oss</h1>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9015.122217281425!2d12.982408086263296!3d55.60583277411832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a3fc2adfadc9%3A0xfc36f6eee24863f3!2sScandic%20Stortorget!5e0!3m2!1ssv!2sse!4v1716390444984!5m2!1ssv!2sse"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </article>
+            <article class="article6">
+                <h1>Bilder</h1>
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img alt="Hotelpoolen" src="bilder/image_slider1.webp" style="width:100%">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img alt="Hotelets lounge" src="bilder/image_slider2.webp" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img alt="Säng i ett av hotellrummen" src="bilder/image_slider3.webp" style="width:100%">
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) { slideIndex = 1 }
+                        if (n < 1) { slideIndex = slides.length }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                    }
+                </script>
+            </article>
+        </main>
+        <footer>
+            Marriton Hotels & Resorts | Huvudgata 66 | 420 69 Malmö | 012 - 12 34 56
+        </footer>
+    </div>
+</body>
+
+</html>
